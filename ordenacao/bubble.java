@@ -2,21 +2,7 @@ import java.util.Random;
 import java.util.Arrays;
 
 public class bubble {
-    public static void bubbleSort(int v[]) {
-        int i, j;
-        int n = v.length;
-        for(i = 0; i < n - 1; i++) {
-            for(j = 0; j < n - i - 1; j++) {
-                if (v[j] > v[j + 1]) {
-                    int temp;
-                    temp = v[j];
-                    v[j] = v[j+1];
-                    v[j+1] = temp;
-                }
-            }
-        }
-    }
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         int tamanho = 10;
         int valor_max = 10;
         int[] novaArray = new int[tamanho];
@@ -30,7 +16,22 @@ public class bubble {
         }
 
         bubbleSort(novaArray);
-        System.out.println("Array ordenada com Valores Aleatórios: " + Arrays.toString(novaArray));
+        System.out.println("ordenado: " + Arrays.toString(novaArray));
         
+    }
+
+    public static void bubbleSort(int v[]) {
+        int i, j;
+        int n = v.length;
+        for(i = 0; i < n - 1; i++) {
+            for(j = 0; j < n - i - 1; j++) {
+                if (v[j] > v[j + 1]) {
+                    int temp;
+                    temp = v[j];
+                    v[j] = v[j+1];
+                    v[j+1] = temp;
+                }
+            }
+        }
     }
 }
