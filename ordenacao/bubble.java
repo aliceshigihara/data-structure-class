@@ -2,22 +2,32 @@ import java.util.Random;
 import java.util.Arrays;
 
 public class bubble {
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         int tamanho = 10;
-        int valor_max = 10;
-        int[] novaArray = new int[tamanho];
-    
-        Random gerarRandomNum = new Random();
 
-        int i;
-        for(i = 0; i < tamanho; i++){
-            novaArray[i] = gerarRandomNum.nextInt(valor_max);
-        
-        }
+        int[] novaArray = norepeat(tamanho);
 
         bubbleSort(novaArray);
         System.out.println("ordenado: " + Arrays.toString(novaArray));
         
+    }
+
+    public static int[] norepeat(int n){
+        int[] array = new int[n];
+        for (int i = 0; i < n; i++) {
+            array[i] = i;
+        }
+
+        Random random = new Random();
+        for (int i = n - 1; i > 0; i--) {
+            int j = random.nextInt(i + 1); 
+
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+
+        return array;
     }
 
     public static void bubbleSort(int v[]) {
