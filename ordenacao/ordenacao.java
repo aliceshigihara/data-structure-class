@@ -6,29 +6,29 @@ public class ordenacao {
         int[] t = {10, 100, 1000, 10000};
 
         for (int n : t){
-        int[] arr = norepeat(n);
-
-        int[] arrb = Arrays.copyOf(arr, n);
-        int[] arrq = Arrays.copyOf(arr, n);
-        int[] arrm = Arrays.copyOf(arr, n);
-
-        System.out.printf("fazendo " + n + " tamanho\n\n");
-
-        long startb = System.nanoTime();
-        bubbleSort(arrb);
-        long timeb = System.nanoTime() - startb;
-
-        long startq = System.nanoTime();
-        quickSort(arrq);
-        long timeq = System.nanoTime() - startq;
-
-        long startm = System.nanoTime();
-        mergetemp(arrm);
-        long timem = System.nanoTime() - startm;
-
-        System.out.printf("tempo bubble: %.4f ms\n", (timeb / 1_000_000.0));
-        System.out.printf("tempo quick: %.4f ms\n", (timeq / 1_000_000.0));
-        System.out.printf("tempo merge: %.4f ms\n\n", (timem / 1_000_000.0));
+            int[] arr = norepeat(n);
+            
+            int[] arrb = Arrays.copyOf(arr, n);
+            int[] arrq = Arrays.copyOf(arr, n);
+            int[] arrm = Arrays.copyOf(arr, n);
+            
+            System.out.printf("fazendo " + n + " tamanho\n\n");
+            
+            long startb = System.nanoTime();
+            bubbleSort(arrb);
+            long timeb = System.nanoTime() - startb;
+            
+            long startq = System.nanoTime();
+            quickSort(arrq);
+            long timeq = System.nanoTime() - startq;
+            
+            long startm = System.nanoTime();
+            mergetemp(arrm);
+            long timem = System.nanoTime() - startm;
+            
+            System.out.printf("tempo bubble: %.4f ms\n", (timeb / 1_000_000.0));
+            System.out.printf("tempo quick: %.4f ms\n", (timeq / 1_000_000.0));
+            System.out.printf("tempo merge: %.4f ms\n\n", (timem / 1_000_000.0));
 
         }
     }
